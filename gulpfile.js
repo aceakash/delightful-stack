@@ -1,14 +1,21 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
+var coffee = require('gulp-coffee');
 var jasmine = require('gulp-jasmine');
 
-require('coffee-script/register');
 
-gulp.task('test', function () {
-  return gulp.src('*.spec.coffee')
+gulp.task('coffee', function () {
+  return gulp.src('*.coffee')
+    .pipe(coffee({bare: true}).on('error', gutil.log))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('test', ['coffee'], function () {
+  return gulp.src('*.spec.js')
     .pipe(jasmine());
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['test'], function () {
   gulp.watch('*.coffee', ['test']);
 });
 
