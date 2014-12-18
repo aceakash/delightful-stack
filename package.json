@@ -1,6 +1,6 @@
 {
   "name": "delightful-stack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A (delightful) stack data structure",
   "scripts": {
     "test": "gulp test"
