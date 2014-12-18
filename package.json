@@ -2,10 +2,21 @@
   "name": "delightful-stack",
   "version": "1.0.0",
   "description": "A (delightful) stack data structure",
-  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aceakash/delightful-stack.git"
+  },
+  "keywords": [
+    "data structure",
+    "stack",
+    "delightful",
+    "simple",
+    "basic",
+    "LIFO"
+  ],
   "author": "Akash Kurdekar <npm@kurdekar.com> (http://untilfalse.com/)",
   "license": "ISC",
   "devDependencies": {
