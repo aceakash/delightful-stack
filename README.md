@@ -76,5 +76,36 @@ stack.pop(); // undefined
 stack.size; // 0
 ```
 
+####peek
+Return the topmost item in the stack without removing it.
 
+```javascript
+var stack = new Stack();
+stack.push('bottom');
+stack.push('top');
 
+stack.peek(); // 'top'
+
+// stack size should be unaffected
+stack.size; // 2
+
+// calling peek again should get same value as before
+stack.peek(); // 'top'
+```
+
+####isEmpty
+`true` if stack has no items, `false` if it does
+
+```javascript
+var stack = new Stack();
+stack.isEmpty(); // true
+
+stack.push('lonely');
+stack.isEmpty(); // false
+
+stack.pop(); // 'lonely'
+stack.isEmpty(); // true
+```
+
+##Test
+Clone the repo, then run `npm install`, then `npm test`
