@@ -1,22 +1,20 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-var coffee = require('gulp-coffee');
+var to5 = require('gulp-6to5');
 var jasmine = require('gulp-jasmine');
 
-
-gulp.task('coffee', function () {
-  return gulp.src('*.coffee')
-    .pipe(coffee({bare: true}).on('error', gutil.log))
+gulp.task('to5', function () {
+  return gulp.src('./es6/*.js')
+    .pipe(to5())
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('test', ['coffee'], function () {
-  return gulp.src('*.spec.js')
+gulp.task('test', ['to5'], function () {
+  return gulp.src('stack.spec.js')
     .pipe(jasmine());
 });
 
 gulp.task('watch', ['test'], function () {
-  gulp.watch('*.coffee', ['test']);
+  gulp.watch('./es6/*.js', ['test']);
 });
 
 gulp.task('default', ['watch']);
