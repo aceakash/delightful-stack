@@ -109,3 +109,6 @@ stack.isEmpty(); // true
 
 ##Test
 Clone the repo, then run `npm install`, then `npm test`
+
+###Build Status
+![Build status](https://codeship.com/projects/bf359510-7f9a-0132-0d6d-66b1976afe6a/status?branch=master)
